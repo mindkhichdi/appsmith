@@ -33,6 +33,7 @@ import { connect } from "react-redux";
 import { HeaderIcons } from "icons/HeaderIcons";
 import ThreeDotLoading from "components/designSystems/appsmith/header/ThreeDotsLoading";
 import DeployLinkButtonDialog from "components/designSystems/appsmith/header/DeployLinkButton";
+import HeaderSecondaryButton from "components/designSystems/appsmith/header/HeaderSecondaryButton";
 
 const HeaderWrapper = styled(StyledHeader)`
   background: ${Colors.BALTIC_SEA};
@@ -112,13 +113,6 @@ const DeployLinkButton = styled(Button)`
   width: 20px !important;
   background-color: rgb(42, 195, 157) !important;
   border: none !important;
-`;
-
-const ShareButton = styled(Button)`
-  height: 32px;
-  margin: 5px 10px;
-  color: white !important;
-  border-color: rgb(95, 105, 116) !important;
 `;
 
 type EditorHeaderProps = {
@@ -206,7 +200,7 @@ export const EditorHeader = (props: EditorHeaderProps) => {
         <SaveStatusContainer className={"t--save-status-container"}>
           {saveStatusIcon}
         </SaveStatusContainer>
-        <ShareButton
+        <HeaderSecondaryButton
           target="_blank"
           href="https://mail.google.com/mail/u/0/?view=cm&fs=1&to=feedback@appsmith.com&tf=1"
           text="Feedback"
@@ -224,7 +218,7 @@ export const EditorHeader = (props: EditorHeaderProps) => {
         ) && (
           <FormDialogComponent
             trigger={
-              <ShareButton
+              <HeaderSecondaryButton
                 text="Share"
                 intent="none"
                 outline

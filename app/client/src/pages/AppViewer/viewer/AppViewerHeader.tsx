@@ -26,6 +26,7 @@ import InviteUsersFormv2 from "pages/organization/InviteUsersFromv2";
 import { getCurrentOrgId } from "selectors/organizationSelectors";
 import { HeaderIcons } from "icons/HeaderIcons";
 import { Colors } from "constants/Colors";
+import HeaderSecondaryButton from "components/designSystems/appsmith/header/HeaderSecondaryButton";
 
 const HeaderWrapper = styled(StyledHeader)<{ hasPages: boolean }>`
   background: ${Colors.BALTIC_SEA};
@@ -58,12 +59,6 @@ const BackToEditorButton = styled(Button)`
   max-width: 200px;
   height: 32px;
   margin: 5px 10px;
-`;
-
-const ShareButton = styled(Button)`
-  height: 32px;
-  margin: 5px 10px;
-  color: white !important;
 `;
 
 const StyledApplicationName = styled.span`
@@ -145,7 +140,7 @@ export const AppViewerHeader = (props: AppViewerHeaderProps) => {
               {canShare && (
                 <FormDialogComponent
                   trigger={
-                    <ShareButton
+                    <HeaderSecondaryButton
                       text="Share"
                       intent="none"
                       outline
